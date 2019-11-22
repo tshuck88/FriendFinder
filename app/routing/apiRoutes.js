@@ -1,4 +1,4 @@
-const friends = require("../data/friends")
+const friends = require("../data/friends");
 
 module.exports = function (app) {
     app.get("/api/friends", function (req, res) {
@@ -7,11 +7,11 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         const newFriend = req.body;
         const scoresArr = newFriend.scores.map(function (score) {
-            return parseInt(score)
+            return parseInt(score);
         });
 
         function addTotal(a, b) {
-            return a + b
+            return a + b;
         }
 
         const friendsTotal = [];
@@ -24,8 +24,8 @@ module.exports = function (app) {
             return Math.abs(value - userTotal)
         });
 
-        const index = totalDifference.indexOf(Math.min.apply(null, totalDifference))
-        return res.json(friends[index])
-        // friends.push(newFriend);
+        const index = totalDifference.indexOf(Math.min.apply(null, totalDifference));
+        friends.push(newFriend);
+        return res.json(friends[index]);
     });
 }
