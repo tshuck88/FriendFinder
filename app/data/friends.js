@@ -34,4 +34,6 @@ const friends = [
         photo: "https://tiffanyholtz.com/ClientImage/Agent-Full/mwinkel.jpg",
         scores: [2, 3, 3, 4, 4, 5, 5, 1, 1, 1]
     }
-]
+];
+
+module.exports = friends;
